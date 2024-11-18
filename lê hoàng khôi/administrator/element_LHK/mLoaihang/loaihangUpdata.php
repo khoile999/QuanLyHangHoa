@@ -27,11 +27,13 @@
                 <td> Hình ảnh: </td>
                 <td><input type="file" name="fileimage"></td>
             </tr>
-            <tr>
+          
+        </table>
+   
+    <img src="data:image/png;base64,<?php echo $getLhUpdate->hinhanh; ?>" width="150">
+    </form>
+    <tr>
                 <td><input type="submit" id="btnsubmit" value="Cập nhật"></td>
                 <td><b id="noteFrom"></b></td>
             </tr>
-        </table>
-    </form>
-    <img src="data:image/png;base64,<?php echo $getLhUpdate->hinhanh; ?>" width="50">
 </div>

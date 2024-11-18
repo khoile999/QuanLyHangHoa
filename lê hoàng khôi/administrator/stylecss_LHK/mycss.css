@@ -25,44 +25,30 @@ body {
    font-size: 1.5em;
    font-weight: bold;
 }
-
-
-#center, #right {
+/* Các phần chính */
+#center, #right, #left {
    min-height: 500px;
-   float: left;
-   margin: 7.5px;
-   border: 2px solid #000000; 
-   border-radius: 15px; 
-   padding: 15px; 
-   background: #ffffff; 
-}
-#right  {
-   min-height: 500px;
-   float: left;
-   margin: 7.5px;
-   border: 2px solid #000000; 
-   border-radius: 15px; 
-   padding: 15px; 
-   background: #e6f7ff; 
-}
-
-#left {
-   min-height: 500px;
-   float: left;
-   margin: 7.5px;
-   border: 2px solid #000000; 
-   border-radius: 15px; 
-   padding: 15px; 
-   background: #e6f7ff; 
-   width: 20%;
+   float:left;
+   border: 2px solid #ddd;
+   border-radius: 10px;
+   padding: 20px;
+   margin: 10px;
+   background: #ffffff;
+   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #center {
    width: 55%;
 }
 
+#left {
+   width: 20%;
+   background-color: #e6f7ff;
+}
+
 #right {
    width: 21%;
+   background-color: #e6f7ff;
 }
 
 
@@ -70,8 +56,8 @@ body {
    width: 100%;
    height: 100px;
    background: #ffffff;
-   border: 2px solid #000000; 
-   border-radius: 15px; 
+   border: 2px solid #ddd;
+   border-radius: 10px;
    clear: both;
    display: flex;
    align-items: center;
@@ -157,7 +143,7 @@ a:hover {
 }
 
 /*chỉnh bảng , khung đăng ksi*/
-form input[type="text"], form input[type="password"], form input[type="date"], form input[type="tel"],form input[type="number"]{
+form input[type="text"], form input[type="password"], form input[type="date"], form input[type="tel"],form input[type="number"], form input[type="email"]{
    width: calc(100% - 22px);
    padding: 5px;
    margin-bottom: 5px;
@@ -201,137 +187,23 @@ form input[type="text"], form input[type="password"], form input[type="date"], f
    opacity: 1;
 }
 
-#w_update{
-   position: absolute;
-   z-index: 1;
-   min-width: 600px;
-   min-height: 200px;
-   border: solid 1px;
-   border-radius: 10;
-   -webkit-border-radius: 10;
-   -moz-border-radius: 10;
-   -ms-border-radius: 10;
-   -o-border-radius: 10;
-   box-shadow: 10px 10px gainsboro;
-   background-color: whitesmoke;
-   
-
+/* khung cập nhật */
+#w_update, #w_update_hh, #w_update_nv, #w_update_kh, 
+#w_update_th, #w_update_tt, #w_update_tthh, #w_update_dg {
+    
+position: absolute;
+z-index: 1;
+min-width: 600px;
+min-height: 200px;
+border: solid 1px;
+border-radius: 10;
+-webkit-border-radius: 10;
+-moz-border-radius: 10;
+-ms-border-radius: 10;
+-o-border-radius: 10;
+box-shadow: 10px 10px gainsboro;
+background-color: whitesmoke;
 }
-#w_update_hh{
-   position: absolute;
-   z-index: 1;
-   min-width: 600px;
-   min-height: 200px;
-   border: solid 1px;
-   border-radius: 10;
-   -webkit-border-radius: 10;
-   -moz-border-radius: 10;
-   -ms-border-radius: 10;
-   -o-border-radius: 10;
-   box-shadow: 10px 10px gainsboro;
-   background-color: whitesmoke;
-   
-
-}
-#w_update_nv{
-   position: absolute;
-   z-index: 1;
-   min-width: 600px;
-   min-height: 200px;
-   border: solid 1px;
-   border-radius: 10;
-   -webkit-border-radius: 10;
-   -moz-border-radius: 10;
-   -ms-border-radius: 10;
-   -o-border-radius: 10;
-   box-shadow: 10px 10px gainsboro;
-   background-color: whitesmoke;
-   
-
-}
-
-#w_update_kh{
-   position: absolute;
-   z-index: 1;
-   min-width: 600px;
-   min-height: 200px;
-   border: solid 1px;
-   border-radius: 10;
-   -webkit-border-radius: 10;
-   -moz-border-radius: 10;
-   -ms-border-radius: 10;
-   -o-border-radius: 10;
-   box-shadow: 10px 10px gainsboro;
-   background-color: whitesmoke;
-   
-
-}
-#w_update_th{
-   position: absolute;
-   z-index: 1;
-   min-width: 600px;
-   min-height: 200px;
-   border: solid 1px;
-   border-radius: 10;
-   -webkit-border-radius: 10;
-   -moz-border-radius: 10;
-   -ms-border-radius: 10;
-   -o-border-radius: 10;
-   box-shadow: 10px 10px gainsboro;
-   background-color: whitesmoke;
-   
-
-}
-#w_update_tt{
-   position: absolute;
-   z-index: 1;
-   min-width: 600px;
-   min-height: 200px;
-   border: solid 1px;
-   border-radius: 10;
-   -webkit-border-radius: 10;
-   -moz-border-radius: 10;
-   -ms-border-radius: 10;
-   -o-border-radius: 10;
-   box-shadow: 10px 10px gainsboro;
-   background-color: whitesmoke;
-   
-
-}
-#w_update_tthh{
-   position: absolute;
-   z-index: 1;
-   min-width: 600px;
-   min-height: 200px;
-   border: solid 1px;
-   border-radius: 10;
-   -webkit-border-radius: 10;
-   -moz-border-radius: 10;
-   -ms-border-radius: 10;
-   -o-border-radius: 10;
-   box-shadow: 10px 10px gainsboro;
-   background-color: whitesmoke;
-   
-
-}
-#w_update_dg{
-   position: absolute;
-   z-index: 1;
-   min-width: 600px;
-   min-height: 200px;
-   border: solid 1px;
-   border-radius: 10;
-   -webkit-border-radius: 10;
-   -moz-border-radius: 10;
-   -ms-border-radius: 10;
-   -o-border-radius: 10;
-   box-shadow: 10px 10px gainsboro;
-   background-color: whitesmoke;
-   
-
-}
-
-
 
 
 

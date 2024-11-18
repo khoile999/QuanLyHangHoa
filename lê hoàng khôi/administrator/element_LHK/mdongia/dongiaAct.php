@@ -1,6 +1,7 @@
 <?php
 session_start();
 require '../../element_LHK/class/dongiaCls.php';
+require '../../element_LHK/mod/hanghoaCls.php';
 
 if (isset($_GET['reqact'])) {
     $requestAction = $_GET['reqact'];
@@ -17,12 +18,13 @@ if (isset($_GET['reqact'])) {
             
             $kq = $dongiaObj->DongiaAdd($idHangHoa, $tenHangHoa, $giaBan, $ngayApDung, $ngayKetThuc, $dieuKien, $ghiChu);
             if ($kq) {
-                header('location: ../../index.php?req=dongiaView&result=ok');
+                $hanghoaObj = new Hanghoa();
+                $hanghoaObj->HanghoaUpdatePrice($idHangHoa, $giaBan);
+                header('location: ../../index.php?req=dongiaview&result=ok');
             } else {
-                header('location: ../../index.php?req=dongiaView&result=notok');
+                header('location: ../../index.php?req=dongiaview&result=notok');
             }
             break;
-
         case 'deletedongia':
             $idDonGia = $_REQUEST['idDonGia'];
             $dongiaObj = new Dongia();
@@ -40,18 +42,16 @@ if (isset($_GET['reqact'])) {
             $dieuKien = $_REQUEST['dieuKien'];
             $ghiChu = $_REQUEST['ghiChu'];
 
-
-            // echo $idDonGia . "<br>";
-            // echo $idHangHoa . "<br>";
-            // echo $tenHangHoa . "<br>";
-            // echo $giaBan . "<br>";
-            // echo $ngayApDung . "<br>";
-            // echo $ngayKetThuc . "<br>";
-            // echo $dieuKien . "<br>";
-            // echo $ghiChu . "<br>";
             $dongiaObj = new Dongia();
-            $kq = $dongiaObj->DongiaUpdate($idHangHoa, $tenHangHoa, $giaBan, $ngayApDung, $ngayKetThuc, $dieuKien, $ghiChu, $idDonGia);
-            header('location: ../../index.php?req=dongiaView&result=' . ($kq ? 'ok' : 'notok'));
+            $kq = $dongiaObj->DongiaUpdate($idDonGia, $idHangHoa, $tenHangHoa, $giaBan, $ngayApDung, $ngayKetThuc, $dieuKien, $ghiChu);
+            
+            if ($kq) {
+                $hanghoaObj = new Hanghoa();
+                $hanghoaObj->HanghoaUpdatePrice($idHangHoa, $giaBan);
+                header('location: ../../index.php?req=dongiaView&result=ok');
+            } else {
+                header('location: ../../index.php?req=dongiaView&result=notok');
+            }
             break;
 
         default:

@@ -8,26 +8,25 @@
         $getTtUpdate = $ttObj->ThuocTinhGetById($idthuoctinh);
     }
 ?>
-
 <div>
     <form name="updatethuoctinh" id="formupdatethuoctinh" method="post" action='./element_LHK/mthuoctinh/thuoctinhAct.php?reqact=updatethuoctinh' enctype="multipart/form-data">
         <input type="hidden" name="idthuoctinh" value="<?php echo $getTtUpdate->idthuoctinh; ?>"/>
+        <input type="hidden" name="hinhanh" value="<?php echo $getTtUpdate->hinhanh; ?>"/>
         <table>
             <tr>
-                <td> Tên thuộc tính: </td>
+                <td>Tên thuộc tính:</td>
                 <td><input type="text" name="tenthuoctinh" value="<?php echo $getTtUpdate->tenthuoctinh; ?>" required></td>
             </tr>
             <tr>
-                <td> Mô tả: </td>
+                <td>Mô tả:</td>
                 <td><input type="text" name="mota" value="<?php echo $getTtUpdate->mota; ?>" required></td>
-                </tr>
+            </tr>
             <tr>
-
-                <td> Hình ảnh: </td>
+                <td>Hình ảnh:</td>
                 <td>
-                    <?php if (!empty($getTtUpdate->hinhanh))  ?>
-                    <img width="150px" src="data:image/png;base64,<?php echo $getTtUpdate->hinhanh; ?>"><br>
-                    
+                    <?php if (!empty($getTtUpdate->hinhanh)): ?>
+                        <img width="150px" src="data:image/png;base64,<?php echo $getTtUpdate->hinhanh; ?>"><br>
+                    <?php endif; ?>
                     <input type="file" name="fileimage">
                 </td>
             </tr>

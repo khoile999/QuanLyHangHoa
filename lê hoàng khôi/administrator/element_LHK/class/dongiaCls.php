@@ -38,10 +38,10 @@ class Dongia extends Database
         $del->execute($data);
         return $del->rowCount();
     }
-    public function DongiaUpdate($idDonGia, $idHangHoa, $tenHangHoa, $giaBan, $ngayApDung, $ngayKetThuc, $dieuKien, $ghiChu )
+    public function DongiaUpdate($idDonGia, $idHangHoa, $tenHangHoa, $giaBan, $ngayApDung, $ngayKetThuc, $dieuKien, $ghiChu)
     {
-        $sql = "UPDATE dongia set idHangHoa=?, tenhanghoa=?, giaBan=?, ngayApDung=?, ngayKetThuc=?, dieuKien=?, ghiChu=?  WHERE idDonGia =?";
-        $data = array($idDonGia, $idHangHoa, $tenHangHoa, $giaBan, $ngayApDung, $ngayKetThuc, $dieuKien, $ghiChu);
+        $sql = "UPDATE dongia SET idHangHoa=?, tenhanghoa=?, giaBan=?, ngayApDung=?, ngayKetThuc=?, dieuKien=?, ghiChu=? WHERE idDonGia=?";
+        $data = array($idHangHoa, $tenHangHoa, $giaBan, $ngayApDung, $ngayKetThuc, $dieuKien, $ghiChu, $idDonGia);
 
         $update = $this->connect->prepare($sql);
         $update->execute($data);

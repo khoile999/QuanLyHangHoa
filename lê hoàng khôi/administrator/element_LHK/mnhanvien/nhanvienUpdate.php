@@ -8,7 +8,6 @@
         $getNvUpdate = $nvObj->NhanvienGetbyID($idnhanvien);
     }
 ?>
-
 <div>
     <form name="updatenhanvien" id="formupdatenv" method="post" action='./element_LHK/mnhanvien/nhanvienAct.php?reqact=updatenhanvien'>
         <input type="hidden" name="idnhanvien" value="<?php echo $getNvUpdate->idnhanvien; ?>"/>

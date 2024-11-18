@@ -82,7 +82,7 @@ if (empty($list_hh)) {
         Trong bảng có: <b><?php echo $l; ?></b>
 
         <table class="table table-hover table-primary">
-        <thead class="table-danger">
+            <thead class="table-danger">
                 <th>ID</th>
                 <th>ID hàng hóa</th>
                 <th>Tên hàng hóa</th>

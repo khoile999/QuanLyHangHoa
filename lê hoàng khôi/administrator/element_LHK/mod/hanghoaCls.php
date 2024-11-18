@@ -76,4 +76,14 @@ class hanghoa extends Database
         $getOne->execute($data);
         return $getOne->fetchAll();
     }
+
+    public function HanghoaUpdatePrice($idhanghoa, $giaban)
+    {
+        $sql = "UPDATE hanghoa SET giathamkhao = ? WHERE idhanghoa = ?";
+        $data = array($giaban, $idhanghoa);
+
+        $update = $this->connect->prepare($sql);
+        $update->execute($data);
+        return $update->rowCount();
+    }
 }

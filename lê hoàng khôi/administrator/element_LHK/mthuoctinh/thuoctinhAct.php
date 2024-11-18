@@ -37,10 +37,10 @@ if (isset($_GET['reqact'])) {
             $idthuoctinh = $_REQUEST['idthuoctinh'];
             $tenthuoctinh = $_REQUEST['tenthuoctinh'];
             $mota = $_REQUEST['mota'];
-            if (file_exists($_FILES['fileimage']['tmp_name'])) {
+            if(file_exists($_FILES['fileimage']['tmp_name'])){
                 $hinhanh_file = $_FILES['fileimage']['tmp_name'];
                 $hinhanh = base64_encode(file_get_contents(addslashes($hinhanh_file)));
-            } else {
+            }else{
                 $hinhanh = $_REQUEST['hinhanh'];
             }
             $tt = new ThuocTinh();
